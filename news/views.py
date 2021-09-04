@@ -5,6 +5,6 @@ from .models import News
 
 
 def index(request):
-    news = News.objects.order_by("-created_at")
+    news = News.objects.all()
     return render(request, template_name='news/index.html', context={'news': news, 'title': "Список новин"})
 

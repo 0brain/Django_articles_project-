@@ -22,4 +22,4 @@ def get_category(request, category_id):
                'categories': categories,
                'category': category,
     }
-    return render(request, template_name='news/categoty.html', context=context)
+    return render(request, template_name='news/category.html', context=context)

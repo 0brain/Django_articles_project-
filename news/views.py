@@ -1,10 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import News
+from .models import News, Category
 
 
 def index(request):
     news = News.objects.all()
-    return render(request, template_name='news/index.html', context={'news': news, 'title': "Список новин"})
+    categories = Category.objects.all()
+    context = {'news': news,
+             'title': "Список новин",
+             'categories': categories,
+    }
+    return render(request, template_name='news/index.html', context=context)
 
